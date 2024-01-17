@@ -1,2 +1,0 @@
-note: open the folder in vscode
-enter the command : "npm install" to install required packages
