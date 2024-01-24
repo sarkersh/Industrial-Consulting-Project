@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { useNavigate } from "react-router-dom";
-import Login from "./LoginForm.tsx";
-import Signup from "./SignUp.tsx";
+import {Link, useNavigate} from "react-router-dom";
 import Logout from "./Logout.tsx";
 
 
@@ -32,21 +30,24 @@ const AdminSideBar: React.FC = () => {
 
 
   const sidebarArray: SidebarItem[] = [
-    { name: "account_settings", path: "/admin/account_settings" },
-    { name: "advanced_settings", path: "/admin/advance_settings" },
-    { name: "audio_settings", path: "/admin/audio_settings" },
-    { name: "device_admin", path: "/admin/device_admin" },
-    { name: "feature_settings", path: "/admin/feature_settings" },
-    { name: "mpk_details", path: "/admin/mpk_details" },
-    { name: "phone_macs", path: "/admin/phone_macs" },
-    { name: "sip_server", path: "/admin/sip_server" },
-    { name: "web_services", path: "/admin/web_services" },
+    { name: "Account Settings", path: "/admin/account_settings" },
+    { name: "Advanced Settings", path: "/admin/advance_settings" },
+    { name: "Audio Settings", path: "/admin/audio_settings" },
+    { name: "Device Admin", path: "/admin/device_admin" },
+    { name: "Feature_settings", path: "/admin/feature_settings" },
+    { name: "MPK Details", path: "/admin/mpk_details" },
+    { name: "Pone Macs", path: "/admin/phone_macs" },
+    { name: "SIP Server", path: "/admin/sip_server" },
+    { name: "Web Seervices", path: "/admin/web_services" },
   ];
 
   return (
     <div className="w-60 bg-slate-950 h-screen overflow-hidden flex flex-col justify-normal items-center overflow-y-auto">
-      <div className="text-3xl font-serif text-slate-100 flex justify-center items-center p-12 border-2 border-transparent border-b-slate-500">
-        <h1>G3T SIP</h1>
+      <div className="text-2xl font-serif text-slate-100 flex justify-center items-center p-12 border-2 border-transparent border-b-slate-500">
+        <Link to={"/"}>
+          <h2 className="text-2xl">G3T SIP</h2>
+          <h3>Home Page</h3>
+        </Link>
       </div>
       <div className="mt-5 text-xl text-white">
         {sidebarArray.map((ele, index) => (

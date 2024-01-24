@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { MdDashboard, MdOutlineCreateNewFolder } from "react-icons/md";
 import { FiWifi } from "react-icons/fi";
-import { FaRegEdit } from "react-icons/fa";
+import { FaRegEdit, FaAngleDown  } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { SiServerless } from "react-icons/si";
 import { Link, useNavigate } from "react-router-dom";
@@ -40,36 +40,47 @@ const SideBar: React.FC = () => {
       path: "/dashboard",
     },
     {
+      icon: <FaAngleDown />,
+      name: "Download Configuration",
+      path: "/dashboard/download_xml",
+    },
+     /* {
       icon: <FiWifi />,
       name: "Live Report",
-      path: "/dashboard/live_server",
-    },
+      path: "/dashboard/",
+    },*/
     {
       icon: <MdOutlineCreateNewFolder />,
       name: "New Configuration",
-      path: "/dashboard/configuration/account_setting_page",
+      path: "/dashboard/new_configuration",
     },
     {
       icon: <FaRegEdit />,
       name: "Edit Configuration",
-      path: "/dashboard/edit_configuration",
+      path: "/dashboard/",
     },
     {
       icon: <RiDeleteBin6Line />,
       name: "Delete Configuration",
-      path: "/dashboard/delete_configuration",
+      path: "/dashboard/delete_xml",
     },
-    {
+    /*{
       icon: <SiServerless />,
       name: "Change SIP Server",
-      path: "/dashboard/change_sip_server",
-    },
+      path: "/dashboard/",
+    },*/
   ];
 
   return (
-    <div className="bg-slate-900 text-slate-400 min-h-screen w-64 font-serif shadow-2xl shadow-white ">
+    <div className="bg-slate-900 text-slate-400 min-h-full w-64 font-serif shadow-2xl shadow-white ">
       <div className="text-slate-100 font-serif text-2xl h-32 text-center flex justify-center items-center border-b-2 border-slate-700">
-        <h1 className="text-3xl ">G3T SIP</h1>
+
+        <Link to={"/"}>
+        <h2 className="text-3xl ">G3T SIP</h2>
+          <h3>Home Page</h3>
+        </Link>
+
+
       </div>
       <div className="p-5  font-sans py-8">
         {sidebarArray.map((ele, index) => (

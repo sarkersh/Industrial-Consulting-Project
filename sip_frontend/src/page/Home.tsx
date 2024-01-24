@@ -21,7 +21,11 @@ const HomePage: React.FC = () => {
     if (!token) {
         // token exists, show content div
         return (
-            <div className="grid grid-cols-1 gap-1 h-1/3">
+            <div className="grid grid-cols-1 items-center gap-2 h-full">
+
+                <h1 className={"flex justify-center items-center text-3xl mt-10"}>Welcom to G3T</h1>
+                <h1 className={"flex justify-center items-center text-2xl"}>SIP Configuration System</h1>
+
                 <div className="p-4 flex justify-center items-center" style={{height: "50px"}}>
                     <LoginForm handleToken={handleToken}/>
                     <span style={{width: "10px"}}></span>
@@ -50,12 +54,12 @@ const HomePage: React.FC = () => {
 
                       <div className="bg-gray-50 p-4 flex justify-center items-center">
                           <button className="text-white bg-red-500 px-4 py-2 rounded">
-                              <Link to={"/admin/account_settings"}>Admin</Link>
+                              <Link to={"/admin/account_settings"}>Admin (CRUD Operations)</Link>
                           </button>
                       </div>
                       <div className="bg-gray-50 p-4 flex justify-center items-center">
                           <button className="text-white bg-blue-500 px-4 py-2 rounded">
-                              <Link to={"/dashboard/configuration/account_settings"}>Configuration</Link>
+                              <Link to={"/dashboard/new_configuration"}>Configuration (XML)</Link>
                           </button>
                       </div>
                   </div>

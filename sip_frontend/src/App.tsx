@@ -15,9 +15,14 @@ import AdminWebServicesPage from "./modules/admin/webServices/page/AdminWebServi
 import DashboardLayout from "./layout/DashBoardLayout";
 import AccountSettingPage from "./modules/AccountSettings/page/AccountSetting";
 import ConfigurationLayout from "./layout/ConfigurationLayout";
+import NewConfiguration from "./modules/config/NewConfiguration";
+import DownloadConfigFile from "./modules/config/DownloadConfigFile";
+import DeleteConfigFile from "./modules/config/DeleteConfigFile.tsx";
+
 const App: React.FC = () => {
   return (
     <Routes>
+
       <Route path="/" element={<HomePage />}></Route>
       <Route element={<AdminLayout />} path="/admin">
         <Route element={<AdminAccountSettingsPage />} path="account_settings" />
@@ -32,6 +37,9 @@ const App: React.FC = () => {
         <Route element={<AdminWebServicesPage />} path="web_services" />
       </Route>
       <Route element={<DashboardLayout />} path="/dashboard">
+        <Route element={<NewConfiguration />} path="new_configuration" />
+        <Route element={<DownloadConfigFile />} path="download_xml" />
+        <Route element={<DeleteConfigFile />} path="delete_xml" />
         <Route element={<ConfigurationLayout />} path="configuration">
           <Route element={<AccountSettingPage />} path="account_settings" />
         </Route>

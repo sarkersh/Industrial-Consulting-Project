@@ -2,6 +2,10 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 const cors = require('cors');
+import path from 'path';
+import fs from 'fs';
+
+
 import debug, { IDebugger } from "debug";
 import db from './core/db/database'
 import { User } from './user/model/UserModel'
@@ -25,7 +29,7 @@ import { user } from './core/routes/index';
 import { audioSettingsRoute } from './core/routes/index';
 import { advanceSettingsRoute } from './core/routes/index';
 import { accountSettingsRoute } from './core/routes/index';
-import { deviceAdminRoute, featureSettings } from './core/routes/index';
+import { deviceAdminRoute, featureSettings, configFileRoute } from './core/routes/index';
 import featureSettingsRoute from "./featuresettings/routes/FeatureSettingsRoute";
 import mpkDetailsRoute from "./mpkdetails/routes/MpkDetailsRoute";
 import phoneMacsRoute from "./phonemacs/routes/PhoneMacsRoute";
@@ -33,6 +37,7 @@ import phoneModelsRoute from "./phonemodels/routes/PhoneModelsRoute";
 import sipServerRoute  from "./sipserver/routes/SipServerRoute";
 import SipServerRoute from "./sipserver/routes/SipServerRoute";
 import WebServicesRoute from "./webservices/routes/WebServicesRoute";
+
 
 
 //Initialise Models
@@ -73,6 +78,10 @@ app.use(cookieParser())
 // Enable CORS for all routes
 app.use(cors());
 
+app.use(express.json());
+
+
+
 //routes
 //app.use(`/`, accountSettingsRoute);
 app.use(`/user`, user.UserRoute);
@@ -85,6 +94,7 @@ app.use(`/user/signin`, user.UserRoute);
 app.use(`/user/signup`, user.UserRoute);
 
 app.use(`/audioSettings`, audioSettingsRoute);
+app.use(`/audioSettings/read`, audioSettingsRoute);
 app.use(`/audioSettings/create`, audioSettingsRoute);
 app.use(`/audioSettings/update/:id`, audioSettingsRoute);
 app.use(`/audioSettings/delete/:id`, audioSettingsRoute);
@@ -98,6 +108,8 @@ app.use(`/accountSettings`, accountSettingsRoute);
 app.use(`/accountSettings/create`, accountSettingsRoute);
 app.use(`/accountSettings/update/:id`, accountSettingsRoute);
 app.use(`/accountSettings/delete/:id`, accountSettingsRoute);
+app.use(`/accountSettings/config/create/:id`, accountSettingsRoute);
+app.use(`/accountSettings/config/delete/:id`, accountSettingsRoute);
 
 app.use(`/deviceAdmin`, deviceAdminRoute);
 app.use(`/deviceAdmin/create`, deviceAdminRoute);
@@ -128,6 +140,8 @@ app.use(`/webServices`, WebServicesRoute);
 app.use(`/webServices/create`, WebServicesRoute);
 app.use(`/webServices/update/:mac`, WebServicesRoute);
 app.use(`/webServices/delete/:mac`, WebServicesRoute);
+
+app.use(`/api/config/`, configFileRoute);
 
 
 export default app;

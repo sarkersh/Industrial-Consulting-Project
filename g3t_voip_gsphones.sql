@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 100432
 File Encoding         : 65001
 
-Date: 2024-01-16 17:49:09
+Date: 2024-01-24 17:53:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -2451,7 +2451,7 @@ CREATE TABLE `users` (
   `updated_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp(),
   `email` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- ----------------------------
 -- Records of users
@@ -2460,6 +2460,12 @@ INSERT INTO `users` VALUES ('1', '$2b$10$k1mGBzrC/VQBDABl96ZaW.jHJ3A8lFGTlrErn1d
 INSERT INTO `users` VALUES ('2', '$2b$10$0G/nszuL1xS//QZSwNPSS.c.H36f0BQNkDldtWZGc5JSEjjdZbPxK', 'peter', '2024-01-13 02:36:42', '2024-01-13 02:36:42', 'jondoe@learn_api6.com');
 INSERT INTO `users` VALUES ('3', '$2b$10$L21Z4utEYvBKO9nuvZdNu.N7GoesdGDRxHW0AC913eWxTB4bTsQ/S', 'shakil', '2024-01-14 18:09:23', '2024-01-14 18:09:23', 'shakil@gmail.com');
 INSERT INTO `users` VALUES ('4', '$2b$10$pGYQnzZ8nFEQ2XrTO2rwfuD4LbqBJcPkbphMhO7zNswonrOnllXKq', 'newman', '2024-01-16 16:03:35', '2024-01-16 16:03:35', 'newman@mail.com');
+INSERT INTO `users` VALUES ('5', '$2b$10$.UXJZ5EDicPHW.0wmVbS1.tbpe7j9Y6K7ne4EGOG.sP.ONI9OMeXa', 'newman', '2024-01-17 16:59:23', '2024-01-17 16:59:23', 'newman@gmail.com');
+INSERT INTO `users` VALUES ('6', '$2b$10$wp4XscdD6d0jXj2UVwAXIuvcEOMPmgzExseniP63asn9wIOJFTiKe', 'newman2', '2024-01-17 19:55:35', '2024-01-17 19:55:35', 'newman@gmail2.com');
+INSERT INTO `users` VALUES ('7', '$2b$10$oVrOzkL9XTLCj/17v6BaZeOFx4tEgyBEMM4US2MjFdGBnQDFawMDq', 'newman21', '2024-01-17 19:57:24', '2024-01-17 19:57:24', 'newman@gmail222.com');
+INSERT INTO `users` VALUES ('8', '$2b$10$cEB9lmnIWQW12LKUamcsQuNJs.g6cHGWAENiG88uDl1d2SEOQYC6m', 'paulj', '2024-01-17 20:10:21', '2024-01-17 20:10:21', 'paulj@gmail.com');
+INSERT INTO `users` VALUES ('9', '$2b$10$lLCUBtHq6e6WIlxXAoTItu52B7hnLe0YKorbIWfmPT6Xm3ZMsfBNS', 'paulj2', '2024-01-17 20:13:53', '2024-01-17 20:13:53', 'paulj2@gmail.com');
+INSERT INTO `users` VALUES ('10', '$2b$10$GAKQCL.Pm0k5pOmURwyA5eTcNZ5j2rG2PpcjLTbc8oYlfLdBw9zma', 'info@opp', '2024-01-17 20:16:55', '2024-01-17 20:16:55', 'info@opp.com');
 
 -- ----------------------------
 -- Table structure for web_services

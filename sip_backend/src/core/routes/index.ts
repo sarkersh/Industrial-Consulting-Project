@@ -12,6 +12,8 @@ import phoneMacs from '../../phonemacs/routes/PhoneMacsRoute'
 import phoneModels from '../../phonemodels/routes/PhoneModelsRoute'
 import sipServer from '../../sipserver/routes/SipServerRoute'
 import webServices from '../../webservices/routes/WebServicesRoute'
+import configFileRoute from "../../api/configfile/routes/ConfigFileRoute";
+
 
 //export const home = { HomeRouter };
 export const user = { UserRoute };
@@ -30,4 +32,5 @@ export {
     phoneModels,
     sipServer,
     webServices,
+    configFileRoute
 }

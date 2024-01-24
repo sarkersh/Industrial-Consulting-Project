@@ -1,27 +1,36 @@
 // File: src/AudioSettings/controller/AudioSettingsController.ts
 import { Request, Response } from "express";
 import { AudioSettings } from "../model/AudioSettingsModel";
-console.log(AudioSettings)
+import fs from 'fs';
+import { parse } from 'querystring';
+
+
 class AudioSettingsController {
 
+
+    constructor() {
+        // Bind the this context to the class instance
+        this.read = this.read.bind(this);
+        this.create = this.create.bind(this);
+    }
 
     async read(req: Request, res: Response) {
         try{
 
-            //return res.json({"body": "record"});
-
             const records = await AudioSettings.findAll({ where: {} });
             return res.json(records);
 
-        }catch (e) {
+        }catch (e: any) {
             return res.json({
                 msg: "fail to read AudioSettings",
                 status: 500,
                 route: "/read",
+                error: e.message
             });
         }
 
     }
+
 
     async create(req: Request, res: Response) {
         try {

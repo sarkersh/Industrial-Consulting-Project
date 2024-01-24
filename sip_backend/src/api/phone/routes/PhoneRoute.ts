@@ -9,6 +9,7 @@ import xml from "xml";
 import { writeFile } from "fs";
 
 
+
 //updated
 interface SitemapItem {
     url: {

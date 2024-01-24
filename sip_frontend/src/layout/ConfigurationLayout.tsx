@@ -10,6 +10,7 @@ const ConfigurationLayout: React.FC = () => {
         <ConfigurationTopBar />
       </div>
       <div className="flex flex-col flex-1 overflow-y-auto">
+          <h1>hell</h1>
         <div className="">
           <Outlet />
         </div>

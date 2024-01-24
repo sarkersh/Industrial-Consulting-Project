@@ -1,0 +1,3 @@
+sip_backend/node_modules
+sip_frontend/node_modules
+sip_backend/.env
